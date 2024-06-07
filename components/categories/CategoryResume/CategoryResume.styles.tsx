@@ -2,25 +2,32 @@ import { palette } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
+  scrollStyle: {
     flex: 1,
-    backgroundColor: "white",
-    margin: 12,
-    borderRadius: 8,
-    padding: 12,
+    paddingHorizontal: 16,
+  },
+  container: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    paddingBottom: 24,
+    width: "100%",
   },
   categoryContainer: {
-    backgroundColor: palette.primary,
-    flexDirection: "column",
+    width: "48%",
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "space-between",
-    width: 96,
-    height: 96,
-    borderRadius: 10,
+    marginBottom: 16,
+    height: 160,
+    backgroundColor: palette.h0s0l100,
+    shadowColor: palette.black,
+    elevation: 4,
+    flexDirection: "column",
+    borderRadius: 12,
   },
   title: {
     color: palette.h0s0l0,
-    fontSize: 12,
+    fontSize: 20,
   },
   emoji: {
     fontSize: 40,
@@ -34,9 +41,6 @@ const styles = StyleSheet.create({
   },
   bottom: {
     height: "30%",
-  },
-  separator: {
-    width: 12,
   },
 });
 

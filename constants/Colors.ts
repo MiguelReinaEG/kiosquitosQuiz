@@ -2,7 +2,7 @@ const tintColorLight = "#2f95dc";
 const tintColorDark = "#fff";
 
 export const palette = {
-  primary: "hsla(0, 91%, 71%, 1)",
+  primary: "hsla(349, 100%, 45%, 1)",
   h0s0l0: "hsla(0, 0%, 0%, 1)",
   h0s0l100: "hsla(0, 0%, 100%, 1)",
   black: "$palette.h0s0l0",
