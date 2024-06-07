@@ -3,6 +3,7 @@
 export interface Category {
   id: number;
   name: string;
-  limit: number;
+  amount: number;
+  emoji: string;
   updated_at?: string;
 }

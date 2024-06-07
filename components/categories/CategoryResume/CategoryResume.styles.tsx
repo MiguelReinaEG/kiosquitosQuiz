@@ -1,3 +1,4 @@
+import { palette } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -6,40 +7,37 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     margin: 12,
     borderRadius: 8,
-    padding: 12
-  },
-  flatlist: {
-    maxHeight: "88%"
+    padding: 12,
   },
   categoryContainer: {
-    backgroundColor: "white",
-    marginBottom: 4,
-    flex: 1,
-    flexDirection: "row",
+    backgroundColor: palette.primary,
+    flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingVertical: 16,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    borderBottomWidth: 1,
-    borderColor: "lightgrey"
+    width: 96,
+    height: 96,
+    borderRadius: 10,
   },
   title: {
-    color: "#111827"
+    color: palette.h0s0l0,
+    fontSize: 12,
   },
-  CategoryTitle: {
-    color: "#111827",
-    marginBottom: 8
+  emoji: {
+    fontSize: 40,
   },
-  leftContainer: {
+  top: {
+    height: "70%",
+    width: "100%",
     flexDirection: "column",
-    alignItems: "flex-start"
-  },
-  rightContainer: {
-    flexDirection: "row",
     alignItems: "center",
-    gap: 8
-  }
+    justifyContent: "center",
+  },
+  bottom: {
+    height: "30%",
+  },
+  separator: {
+    width: 12,
+  },
 });
 
 export default styles;
