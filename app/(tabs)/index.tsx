@@ -14,7 +14,6 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="black" />
 
       {isAnonymous ? (
         <AnonymousMessage />
@@ -37,6 +36,9 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    width: "100%",
+    justifyContent: "center",
+    backgroundColor: "#fff",
   },
   title: {
     fontSize: 20,
