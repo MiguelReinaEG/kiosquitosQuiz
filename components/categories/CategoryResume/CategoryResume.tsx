@@ -1,11 +1,11 @@
 import { useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { FlatList, ListRenderItem, Text, View } from "react-native";
+import { ScrollView, ListRenderItem, Text, View } from "react-native";
+import { TouchableOpacity } from "react-native";
 
 import styles from "./CategoryResume.styles";
 import { CategoryResumeProps as Props } from "./CategoryResume.types";
 import CategoryPlaceholder from "../CategoryPlaceholder/CategoryPlaceholder";
-
 import EmptyState from "@/components/global/EmptyState/EmptyState";
 import { Category } from "@/interfaces/categories.types";
 import { getCategoriesKey } from "@/services/finance.services.hooks";
@@ -19,38 +19,38 @@ const CategoryResume: React.FC<Props> = (props) => {
     queryClient.refetchQueries({ queryKey: getCategoriesKey() });
   };
 
-  const renderItem: ListRenderItem<Category> = (list) => {
-    const { item: category } = list;
-    const { limit, name } = category;
-    return (
-      <View style={styles.categoryContainer}>
-        <View style={styles.leftContainer}>
-          <Text style={styles.title}>{name}</Text>
-          <Text style={styles.title}>Limit: {limit}</Text>
-        </View>
-        <View style={styles.rightContainer}></View>
-      </View>
-    );
-  };
+  const onPress = (categoryId: number) => {};
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.CategoryTitle}>Your last incomes</Text>
-      <View style={styles.flatlist}>
-        <FlatList
-          data={categories}
-          renderItem={renderItem}
-          keyExtractor={(_item, index) => index.toString()}
-          ListEmptyComponent={
-            isFetching ? (
-              <CategoryPlaceholder />
-            ) : (
-              <EmptyState text="No categories found" onPress={onRefresh} />
-            )
-          }
-        />
+    <ScrollView style={styles.scrollStyle} showsVerticalScrollIndicator={false}>
+      <View style={styles.container}>
+        {isFetching ? <CategoryPlaceholder /> : null}
+        {categories && categories.length > 0 ? (
+          categories.map((category, index) => {
+            const { emoji = "", name, id } = category;
+
+            return (
+              <TouchableOpacity
+                key={index}
+                style={styles.categoryContainer}
+                onPress={() => onPress(id)}
+              >
+                <View style={styles.top}>
+                  <Text style={styles.emoji}>{emoji}</Text>
+                </View>
+                <View style={styles.bottom}>
+                  <Text style={styles.title} numberOfLines={1}>
+                    {name}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })
+        ) : (
+          <EmptyState text="No categories found" onPress={onRefresh} />
+        )}
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -19,7 +19,6 @@ export default function Auth() {
 
   useEffect(() => {
     if (!isAnonymous) {
-      alert("You are logged in, go back Gilaso");
       setTimeout(() => {
         router.replace("/");
       }, 1000);
