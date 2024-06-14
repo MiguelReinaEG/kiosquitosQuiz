@@ -31,6 +31,13 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="play"
+        options={{
+          headerShown: false,
+          title: "Play",
+        }}
+      />
+      <Tabs.Screen
         name="profile"
         options={{
           title: "Profile",
