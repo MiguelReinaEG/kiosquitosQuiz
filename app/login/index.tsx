@@ -1,5 +1,5 @@
 import * as Linking from "expo-linking";
-import { router } from "expo-router";
+import { router, useNavigation } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
@@ -14,6 +14,7 @@ WebBrowser.maybeCompleteAuthSession(); // required for web only
 
 export default function Auth() {
   const isAnonymous = useAuthStore((state) => state.isAnonymous);
+  const navigation = useNavigation();
   const setIsAnonymous = useAuthStore((state) => state.setIsAnonymous);
   const setUser = useAuthStore((state) => state.setUser);
 
@@ -38,12 +39,16 @@ export default function Auth() {
     };
   }, []);
 
+  useEffect(() => {
+    navigation.setOptions({ headerShown: false });
+  }, [navigation]);
+
   return (
     <View style={styles.container}>
       <Text style={styles.headerTitle}>Login Screen</Text>
       <View style={styles.content}>
         <EmailForm />
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={[styles.githubButton, { opacity: 0.7 }]}
           onPress={() => performOAuth(setIsAnonymous, setUser)}
           disabled={true}
@@ -51,7 +56,7 @@ export default function Auth() {
           <Text style={{ color: "#fff" }}>
             {loading ? "loading" : "Sign in with GitHub"}
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </View>
   );

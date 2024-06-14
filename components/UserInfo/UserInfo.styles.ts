@@ -12,11 +12,13 @@ const styles = StyleSheet.create({
     gap: 16,
     borderBottomLeftRadius: 24,
     borderBottomRightRadius: 24,
-    marginBottom: 12
+    marginBottom: 12,
   },
   name: {
-    maxWidth: "68%"
-  }
+    maxWidth: "68%",
+    color: "#fff",
+    fontFamily: "PoppinsBold",
+  },
 });
 
 export default styles;

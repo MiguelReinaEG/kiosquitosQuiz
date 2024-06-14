@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: palette.h0s0l0,
-    fontSize: 20,
+    fontSize: 16,
+    fontFamily: "Poppins",
   },
   emoji: {
     fontSize: 40,

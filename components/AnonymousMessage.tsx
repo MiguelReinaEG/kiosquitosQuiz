@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#fff",
-    fontFamily: "Poppins",
     fontSize: 16,
+    fontFamily: "PoppinsBold",
   },
   image: {
     width: 200,

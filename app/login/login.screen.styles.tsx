@@ -3,25 +3,27 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
+    paddingTop: 80,
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: "bold",
     marginTop: 20,
-    marginLeft: 20
+    marginLeft: 20,
   },
   content: {
     flex: 1,
     justifyContent: "flex-start",
     alignItems: "center",
-    width: "100%"
+    width: "100%",
+    backgroundColor: "#fff",
   },
   githubButton: {
     backgroundColor: "#333",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
-    color: "#fff"
-  }
+    color: "#fff",
+  },
 });

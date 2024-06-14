@@ -82,20 +82,20 @@ export default function EmailForm() {
       </View>
       <View style={[styles.verticallySpaced, styles.mt20]}>
         <TouchableOpacity
-          style={styles.button}
+          style={styles.buttonIn}
           disabled={loading}
           onPress={signInWithEmail}
         >
-          <Text style={{ color: "#fff" }}>Sign in</Text>
+          <Text style={styles.textButton}>Sign In</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.verticallySpaced}>
         <TouchableOpacity
-          style={styles.button}
+          style={styles.buttonUp}
           disabled={loading}
           onPress={signUpWithEmail}
         >
-          <Text style={{ color: "#fff" }}>Sign Up</Text>
+          <Text style={[styles.textButton, styles.textAuxiliary]}>Sign Up</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     width: "92%",
     marginVertical: 40,
     padding: 12,
-    backgroundColor: "#F1F1F1",
+    backgroundColor: "#fff",
     marginHorizontal: 24,
     borderRadius: 8,
     shadowColor: "black",
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.24,
     shadowRadius: 2.24,
-    elevation: 4,
+    elevation: 8,
   },
   verticallySpaced: {
     paddingTop: 4,
@@ -127,11 +127,24 @@ const styles = StyleSheet.create({
   mt20: {
     marginTop: 20,
   },
-  button: {
+  buttonIn: {
     backgroundColor: "hsla(349, 100%, 45%, 1)",
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 4,
+  },
+  buttonUp: {
+    backgroundColor: "hsl(0, 0%, 89%)",
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 4,
+  },
+  textButton: {
     color: "#fff",
+    textAlign: "center",
+    fontFamily: "PoppinsBold",
+  },
+  textAuxiliary: {
+    color: "#000",
   },
 });
