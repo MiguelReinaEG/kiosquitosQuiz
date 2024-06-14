@@ -3,6 +3,7 @@ import { Tabs } from "expo-router";
 import React from "react";
 
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
+import TabBar from "@/components/TabBar/TabBar";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -15,11 +16,11 @@ function TabBarIcon(props: {
 export default function TabLayout() {
   return (
     <Tabs
+      tabBar={(props) => <TabBar {...props} />}
       screenOptions={{
-        tabBarActiveTintColor: "#111827",
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true)
+        headerShown: useClientOnlyValue(false, true),
       }}
     >
       <Tabs.Screen
@@ -27,15 +28,6 @@ export default function TabLayout() {
         options={{
           headerShown: false,
           title: "Categories",
-          tabBarIcon: ({ color }) => <TabBarIcon name="bank" color={color} />
-        }}
-      />
-      <Tabs.Screen
-        name="two"
-        options={{
-          headerShown: false,
-          title: "Expenses",
-          tabBarIcon: ({ color }) => <TabBarIcon name="money" color={color} />
         }}
       />
       <Tabs.Screen
@@ -43,7 +35,7 @@ export default function TabLayout() {
         options={{
           title: "Profile",
           headerShown: false,
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />
+          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
       />
     </Tabs>

@@ -1,45 +1,47 @@
+import { palette } from "@/constants/Colors";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: {
+  scrollStyle: {
     flex: 1,
-    backgroundColor: "white",
-    margin: 12,
-    borderRadius: 8,
-    padding: 12
+    paddingHorizontal: 16,
   },
-  flatlist: {
-    maxHeight: "88%"
+  container: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    paddingBottom: 24,
+    width: "100%",
   },
   categoryContainer: {
-    backgroundColor: "white",
-    marginBottom: 4,
-    flex: 1,
-    flexDirection: "row",
+    width: "48%",
+    justifyContent: "center",
     alignItems: "center",
-    justifyContent: "space-between",
-    paddingVertical: 16,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    borderBottomWidth: 1,
-    borderColor: "lightgrey"
+    marginBottom: 16,
+    height: 160,
+    backgroundColor: palette.h0s0l100,
+    shadowColor: palette.black,
+    elevation: 4,
+    flexDirection: "column",
+    borderRadius: 12,
   },
   title: {
-    color: "#111827"
+    color: palette.h0s0l0,
+    fontSize: 20,
   },
-  CategoryTitle: {
-    color: "#111827",
-    marginBottom: 8
+  emoji: {
+    fontSize: 40,
   },
-  leftContainer: {
+  top: {
+    height: "70%",
+    width: "100%",
     flexDirection: "column",
-    alignItems: "flex-start"
-  },
-  rightContainer: {
-    flexDirection: "row",
     alignItems: "center",
-    gap: 8
-  }
+    justifyContent: "center",
+  },
+  bottom: {
+    height: "30%",
+  },
 });
 
 export default styles;
