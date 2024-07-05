@@ -1,15 +1,9 @@
 import React, { useState } from "react";
-import {
-  Alert,
-  StyleSheet,
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { Alert, StyleSheet, View, Text, TextInput } from "react-native";
+import { TouchableOpacity } from "react-native";
 
-import { supabase } from "@/app/supabase";
 import { useAuthStore } from "@/stores/auth/auth.store";
+import { supabase } from "@/config/supabase";
 
 export default function EmailForm() {
   const [email, setEmail] = useState("");
@@ -19,7 +13,7 @@ export default function EmailForm() {
   const setIsAnonymous = useAuthStore((state) => state.setIsAnonymous);
   const setUser = useAuthStore((state) => state.setUser);
 
-  async function signInWithEmail() {
+  const signInWithEmail = async () => {
     try {
       setLoading(true);
       const { data } = await supabase.auth.signInWithPassword({
@@ -35,9 +29,9 @@ export default function EmailForm() {
     } finally {
       setLoading(false);
     }
-  }
+  };
 
-  async function signUpWithEmail() {
+  const signUpWithEmail = async () => {
     try {
       setLoading(true);
       const { data } = await supabase.auth.signUp({
@@ -57,7 +51,7 @@ export default function EmailForm() {
     } finally {
       setLoading(false);
     }
-  }
+  };
 
   return (
     <View style={styles.container}>

@@ -7,9 +7,9 @@ import { DeleteExpensePayload } from "./finance.services.types";
 import { UpdateCategoryPayload } from "./finance.services.types";
 import { UpdateExpensePayload } from "./finance.services.types";
 
-import { supabase } from "@/app/supabase";
 import { Category } from "@/interfaces/categories.types";
 import { Expenses } from "@/interfaces/expenses.types";
+import { supabase } from "@/config/supabase";
 
 export const fetchCategories = async () => {
   const response: PostgrestSingleResponse<Category[]> = await supabase

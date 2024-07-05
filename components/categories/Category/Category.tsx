@@ -5,11 +5,12 @@ import { CategoryProps as Props } from "./Category.types";
 
 import { useDeleteCategory } from "@/services/finance.services.hooks";
 import { Text, TouchableOpacity, View } from "react-native";
+import { buildCategory } from "@/utils/testUtils/builders/categories.builders";
+const category = buildCategory();
 
 const Category: React.FC<Props> = (props) => {
   const deleteMutation = useDeleteCategory();
   const { mutateAsync: deleteCategory, reset: resetDelete } = deleteMutation;
-  const { category } = props;
   const { name, amount, id } = category;
 
   const deleteCategoryHandler = async () => {

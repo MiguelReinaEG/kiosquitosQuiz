@@ -1,13 +1,12 @@
 import { useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { ScrollView, ListRenderItem, Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native";
 
 import styles from "./CategoryResume.styles";
 import { CategoryResumeProps as Props } from "./CategoryResume.types";
 import CategoryPlaceholder from "../CategoryPlaceholder/CategoryPlaceholder";
 import EmptyState from "@/components/global/EmptyState/EmptyState";
-import { Category } from "@/interfaces/categories.types";
 import { getCategoriesKey } from "@/services/finance.services.hooks";
 import { useFetchCategories } from "@/services/finance.services.hooks";
 import { useFinanceStore } from "@/stores/finance/finance.store";
@@ -26,7 +25,7 @@ const CategoryResume: React.FC<Props> = (props) => {
 
   const onPress = (categoryId: number) => {
     setSelectedCategoryId(categoryId);
-    router.push("/categories");
+    router.push("/category");
   };
 
   return (

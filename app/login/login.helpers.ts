@@ -3,7 +3,7 @@ import { makeRedirectUri } from "expo-auth-session";
 import * as QueryParams from "expo-auth-session/build/QueryParams";
 import * as WebBrowser from "expo-web-browser";
 
-import { supabase } from "../supabase";
+import { supabase } from "../../config/supabase";
 
 const redirectTo = makeRedirectUri();
 
