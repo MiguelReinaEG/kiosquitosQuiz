@@ -5,9 +5,9 @@ export const queryClientConfig: QueryClientConfig = {
     queries: {
       refetchOnWindowFocus: false,
       staleTime: 10 * 1000 * 60,
-      retry: 3
-    }
-  }
+      retry: 3,
+    },
+  },
 };
 
 export const getQueryClient = () => new QueryClient(queryClientConfig);

@@ -2,7 +2,7 @@ import { Category } from "@/interfaces/categories.types";
 import { Expenses } from "@/interfaces/expenses.types";
 
 export interface CreateCategoryPayload
-  extends Pick<Category, "name" | "limit"> {}
+  extends Pick<Category, "name" | "amount"> {}
 
 export interface UpdateCategoryPayload extends CreateCategoryPayload {
   id: Category["id"];

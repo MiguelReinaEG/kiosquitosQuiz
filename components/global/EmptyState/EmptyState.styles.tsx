@@ -6,15 +6,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
-    padding: 16
+    padding: 16,
   },
   title: {
     fontSize: 16,
-    marginBottom: 16
+    marginBottom: 16,
   },
   buttonText: {
     fontSize: 16,
-    color: "white"
+    color: "white",
   },
   button: {
     flexDirection: "column",
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
     width: "50%",
     padding: 8,
     borderRadius: 8,
-    backgroundColor: "black"
-  }
+    backgroundColor: "black",
+  },
 });
 
 export default styles;

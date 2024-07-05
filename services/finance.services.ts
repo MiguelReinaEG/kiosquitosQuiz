@@ -71,7 +71,7 @@ export const createCategory = async (payload: CreateCategoryPayload) => {
 };
 
 export const updateCategory = async (payload: UpdateCategoryPayload) => {
-  const { name, limit, id } = payload;
+  const { name, amount, id } = payload;
 
   const { data } = await supabase.auth.getSession();
   const { id: userId } = data.session?.user ?? {};
@@ -79,9 +79,9 @@ export const updateCategory = async (payload: UpdateCategoryPayload) => {
 
   const partialCategory = {
     name,
-    limit,
+    amount,
     user_id: userId,
-    updated_at: new Date()
+    updated_at: new Date(),
   };
 
   const response: PostgrestSingleResponse<Category> = await supabase

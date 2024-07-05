@@ -7,12 +7,7 @@ import { useFinanceStore } from "@/stores/finance/finance.store";
 import { Text, TouchableOpacity, View } from "react-native";
 
 const CategoryHeader: React.FC<Props> = (props) => {
-  const setCategoryModalConfig = useFinanceStore(
-    (state) => state.setCategoryModalConfig
-  );
-  const handleCreateCategory = () => {
-    setCategoryModalConfig({ visible: true, mode: "create" });
-  };
+  const handleCreateCategory = () => {};
 
   return (
     <View style={styles.container}>

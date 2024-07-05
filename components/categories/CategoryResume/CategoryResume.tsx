@@ -10,16 +10,24 @@ import EmptyState from "@/components/global/EmptyState/EmptyState";
 import { Category } from "@/interfaces/categories.types";
 import { getCategoriesKey } from "@/services/finance.services.hooks";
 import { useFetchCategories } from "@/services/finance.services.hooks";
+import { useFinanceStore } from "@/stores/finance/finance.store";
+import { router } from "expo-router";
 
 const CategoryResume: React.FC<Props> = (props) => {
   const queryClient = useQueryClient();
   const { data: categories, isFetching } = useFetchCategories();
+  const setSelectedCategoryId = useFinanceStore(
+    (state) => state.setSelectedCategoryId
+  );
 
   const onRefresh = () => {
     queryClient.refetchQueries({ queryKey: getCategoriesKey() });
   };
 
-  const onPress = (categoryId: number) => {};
+  const onPress = (categoryId: number) => {
+    setSelectedCategoryId(categoryId);
+    router.push("/categories");
+  };
 
   return (
     <ScrollView style={styles.scrollStyle} showsVerticalScrollIndicator={false}>

@@ -4,18 +4,13 @@ import styles from "./Category.styles";
 import { CategoryProps as Props } from "./Category.types";
 
 import { useDeleteCategory } from "@/services/finance.services.hooks";
-import { useFinanceStore } from "@/stores/finance/finance.store";
 import { Text, TouchableOpacity, View } from "react-native";
 
 const Category: React.FC<Props> = (props) => {
   const deleteMutation = useDeleteCategory();
   const { mutateAsync: deleteCategory, reset: resetDelete } = deleteMutation;
-  const { isPending } = deleteMutation;
   const { category } = props;
-  const { name, limit, id } = category;
-  const setCategoryModalConfig = useFinanceStore(
-    (state) => state.setCategoryModalConfig
-  );
+  const { name, amount, id } = category;
 
   const deleteCategoryHandler = async () => {
     try {
@@ -26,15 +21,13 @@ const Category: React.FC<Props> = (props) => {
     }
   };
 
-  const editCategoryHandler = async () => {
-    setCategoryModalConfig({ visible: true, mode: "update", category });
-  };
+  const editCategoryHandler = async () => {};
 
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
         <Text style={styles.title}>{name}</Text>
-        <Text style={styles.title}>Limit: {limit}</Text>
+        <Text style={styles.title}>Limit: {amount}</Text>
       </View>
       <View style={styles.rightContainer}>
         <TouchableOpacity onPress={editCategoryHandler}>Edit</TouchableOpacity>

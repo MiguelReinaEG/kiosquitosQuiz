@@ -6,5 +6,5 @@ import { StoreInitialValues } from "@/interfaces/stores.types";
 
 export const defaultValues: StoreInitialValues<AuthStoreValues> = {
   isAnonymous: true,
-  user: undefined
+  user: undefined,
 };

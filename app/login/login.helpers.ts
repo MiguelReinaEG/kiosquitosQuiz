@@ -17,7 +17,7 @@ export const extractParamsFromUrl = (url: string) => {
     refresh_token: params.get("refresh_token"),
     token_type: params.get("token_type"),
     provider_token: params.get("provider_token"),
-    code: params.get("code")
+    code: params.get("code"),
   };
 
   return data;
@@ -33,7 +33,7 @@ export const createSessionFromUrl = async (url: string) => {
 
   const { data, error } = await supabase.auth.setSession({
     access_token,
-    refresh_token
+    refresh_token,
   });
   if (error) throw error;
   return data;
@@ -47,8 +47,8 @@ export const performOAuth = async (
     provider: "github",
     options: {
       redirectTo,
-      skipBrowserRedirect: true
-    }
+      skipBrowserRedirect: true,
+    },
   });
   if (error) throw error;
 

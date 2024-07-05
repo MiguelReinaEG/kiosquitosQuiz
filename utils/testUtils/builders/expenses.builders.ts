@@ -10,7 +10,7 @@ export const buildExpenses = (overrides?: Partial<Expenses>): Expenses => {
     amount: 100,
     description: "Buy food",
     category: 1,
-    ...overrides
+    ...overrides,
   };
 };
 

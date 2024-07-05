@@ -8,8 +8,10 @@ export const buildCategory = (overrides?: Partial<Category>): Category => {
   return {
     id: 1,
     name: "Groceries",
-    limit: 100,
-    ...overrides
+    amount: 100,
+    emoji: "🍔",
+    updated_at: new Date().toISOString(),
+    ...overrides,
   };
 };
 

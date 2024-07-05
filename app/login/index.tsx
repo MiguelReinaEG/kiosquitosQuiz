@@ -15,8 +15,6 @@ WebBrowser.maybeCompleteAuthSession(); // required for web only
 export default function Auth() {
   const isAnonymous = useAuthStore((state) => state.isAnonymous);
   const navigation = useNavigation();
-  const setIsAnonymous = useAuthStore((state) => state.setIsAnonymous);
-  const setUser = useAuthStore((state) => state.setUser);
 
   useEffect(() => {
     if (!isAnonymous) {
@@ -29,7 +27,6 @@ export default function Auth() {
   // Handle linking into app from email app.
   const url = Linking.useURL();
   if (url) createSessionFromUrl(url);
-  const [loading] = useState(false);
 
   // to warm up the browser
   useEffect(() => {

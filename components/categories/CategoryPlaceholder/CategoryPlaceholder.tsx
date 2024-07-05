@@ -9,7 +9,7 @@ import usePlaceholderAnimation from "@/hooks/usePlaceholderAnimation";
 
 const AnimatedView = animated(View);
 
-const CategoryPlaceholder: React.FC<Props> = props => {
+const CategoryPlaceholder: React.FC<Props> = (props) => {
   const animationStyle = usePlaceholderAnimation();
 
   const renderSection = (key: number) => {
@@ -38,7 +38,7 @@ const CategoryPlaceholder: React.FC<Props> = props => {
 
   return (
     <>
-      {[0, 1, 2, 3, 4].map(idx => {
+      {[0, 1, 2, 3, 4].map((idx) => {
         return renderSection(idx);
       })}
     </>

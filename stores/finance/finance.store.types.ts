@@ -6,12 +6,6 @@ import { Expenses } from "@/interfaces/expenses.types";
 export interface FinanceStoreValues {
   selectedCategoryId: Category["id"] | undefined;
   setSelectedCategoryId: (id: Category["id"] | undefined) => void;
-  selectedExpenseId: string | undefined;
-  setSelectedExpenseId: (id: string | undefined) => void;
-  categoryModalConfig: CategoryModalProps;
-  setCategoryModalConfig: (payload: CategoryModalProps) => void;
-  expenseModalConfig: ExpenseModalProps;
-  setExpenseModalConfig: (payload: ExpenseModalProps) => void;
   reset: () => void;
 }
 

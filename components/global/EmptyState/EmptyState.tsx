@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import styles from "./EmptyState.styles";
 import { EmptyStateProps as Props } from "./EmptyState.types";
 
-const EmptyState: React.FC<Props> = props => {
+const EmptyState: React.FC<Props> = (props) => {
   const { text, onPress } = props;
 
   return (

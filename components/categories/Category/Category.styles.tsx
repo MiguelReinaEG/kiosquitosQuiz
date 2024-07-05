@@ -12,20 +12,20 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 8,
     borderBottomWidth: 1,
-    borderColor: "lightgrey"
+    borderColor: "lightgrey",
   },
   title: {
-    color: "black"
+    color: "black",
   },
   leftContainer: {
     flexDirection: "column",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   rightContainer: {
     flexDirection: "row",
     alignItems: "center",
-    gap: 8
-  }
+    gap: 8,
+  },
 });
 
 export default styles;
