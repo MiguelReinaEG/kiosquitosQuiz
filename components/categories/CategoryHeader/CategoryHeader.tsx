@@ -13,7 +13,7 @@ const CategoryHeader: React.FC<Props> = (props) => {
     <View style={styles.container}>
       <Text style={styles.title}>Categories</Text>
       <TouchableOpacity style={styles.button} onPress={handleCreateCategory}>
-        Add Category
+        <Text>Add Category</Text>
       </TouchableOpacity>
     </View>
   );

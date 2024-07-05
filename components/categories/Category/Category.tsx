@@ -30,9 +30,11 @@ const Category: React.FC<Props> = (props) => {
         <Text style={styles.title}>Limit: {amount}</Text>
       </View>
       <View style={styles.rightContainer}>
-        <TouchableOpacity onPress={editCategoryHandler}>Edit</TouchableOpacity>
+        <TouchableOpacity onPress={editCategoryHandler}>
+          <Text>Edit</Text>
+        </TouchableOpacity>
         <TouchableOpacity onPress={deleteCategoryHandler}>
-          Delete
+          <Text>Delete</Text>
         </TouchableOpacity>
       </View>
     </View>

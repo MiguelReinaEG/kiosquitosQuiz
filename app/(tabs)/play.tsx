@@ -5,10 +5,10 @@ import { Text, View } from "@/components/Themed";
 export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <Image
+      {/* <Image
         style={styles.image}
         source={require("../../assets/images/play.gif")}
-      />
+      /> */}
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
