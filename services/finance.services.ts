@@ -29,7 +29,7 @@ export const fetchCategoryById = async (id: Category["id"]) => {
 
   if (response.error) throw Error(response.error.message);
   if (!response.data) throw new Error(`No category ${id} found`);
-  return response.data;
+  return response.data[0];
 };
 
 export const fetchExpenses = async () => {

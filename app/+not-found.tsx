@@ -1,14 +1,20 @@
 import { Link, Stack } from "expo-router";
+import { useGlobalSearchParams, useLocalSearchParams } from "expo-router";
 import { StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
 
 export default function NotFoundScreen() {
+  const glob = useGlobalSearchParams();
+  const local = useLocalSearchParams();
+
   return (
     <>
       <Stack.Screen options={{ title: "Oops!" }} />
       <View style={styles.container}>
         <Text style={styles.title}>This screen doesn't exist.</Text>
+        <Text style={styles.title}>{JSON.stringify(glob)}</Text>
+        <Text style={styles.title}>{JSON.stringify(local)}</Text>
 
         <Link href="/" style={styles.link}>
           <Text style={styles.linkText}>Go to home screen!</Text>

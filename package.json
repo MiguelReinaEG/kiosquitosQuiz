@@ -41,6 +41,7 @@
     "@types/validator": "^13.7.1",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
+    "dayjs": "^1.11.11",
     "expo": "~50.0.19",
     "expo-auth-session": "^5.4.0",
     "expo-font": "~11.10.3",
