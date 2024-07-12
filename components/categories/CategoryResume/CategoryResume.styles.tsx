@@ -22,8 +22,10 @@ const styles = StyleSheet.create({
     backgroundColor: palette.h0s0l100,
     shadowColor: palette.black,
     elevation: 4,
+    borderColor: palette.black,
+    borderWidth: 1,
     flexDirection: "column",
-    borderRadius: 12,
+    borderRadius: 16,
   },
   title: {
     color: palette.h0s0l0,

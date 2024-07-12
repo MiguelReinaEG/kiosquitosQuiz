@@ -6,4 +6,5 @@ export interface Category {
   amount: number;
   emoji: string;
   updated_at?: string;
+  created_at?: string;
 }

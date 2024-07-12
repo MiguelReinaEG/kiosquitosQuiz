@@ -7,35 +7,35 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     height: 64,
-    padding: 12
+    padding: 12,
   },
   title: {
     height: "40%",
-    width: "80%"
+    width: "80%",
   },
   limit: {
     height: "40%",
     width: "60%",
-    marginTop: 8
+    marginTop: 8,
   },
   edit: {
     width: "40%",
-    borderRadius: 4
+    borderRadius: 4,
   },
   delete: {
     width: "40%",
-    borderRadius: 4
+    borderRadius: 4,
   },
   right: {
     flex: 1,
     height: "100%",
     flexDirection: "row",
-    justifyContent: "space-around"
+    justifyContent: "space-around",
   },
   left: {
     flex: 1,
-    flexDirection: "column"
-  }
+    flexDirection: "column",
+  },
 });
 
 export default styles;

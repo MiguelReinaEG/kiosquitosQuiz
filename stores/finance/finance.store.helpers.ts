@@ -6,7 +6,4 @@ import { StoreInitialValues } from "@/interfaces/stores.types";
 
 export const defaultValues: StoreInitialValues<FinanceStoreValues> = {
   selectedCategoryId: undefined,
-  selectedExpenseId: undefined,
-  categoryModalConfig: { visible: false, mode: "create" },
-  expenseModalConfig: { visible: false, mode: "create" }
 };

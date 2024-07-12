@@ -26,7 +26,7 @@ export const useFetchCategories = () => {
   return useQuery({
     queryKey: getCategoriesKey(),
     queryFn: fetchCategories,
-    enabled: true
+    enabled: true,
   });
 };
 
@@ -34,7 +34,7 @@ export const useFetchCategory = (categoryId: string) => {
   return useQuery({
     queryKey: ["categories", { categoryId }],
     queryFn: () => fetchCategoryById(+categoryId),
-    enabled: !!categoryId
+    enabled: !!categoryId,
   });
 };
 
@@ -42,11 +42,11 @@ export const useCreateCategory = () => {
   const queryClient = useQueryClient();
 
   return useMutation<CommonResponse["data"], Error, CreateCategoryPayload>({
-    mutationFn: payload => createCategory(payload),
+    mutationFn: (payload) => createCategory(payload),
     onSettled: () =>
       queryClient.invalidateQueries({
-        queryKey: getCategoriesKey()
-      })
+        queryKey: getCategoriesKey(),
+      }),
   });
 };
 
@@ -54,11 +54,11 @@ export const useUpdateCategory = () => {
   const queryClient = useQueryClient();
 
   return useMutation<CommonResponse["data"], Error, UpdateCategoryPayload>({
-    mutationFn: payload => updateCategory(payload),
+    mutationFn: (payload) => updateCategory(payload),
     onSettled: () =>
       queryClient.invalidateQueries({
-        queryKey: getCategoriesKey()
-      })
+        queryKey: getCategoriesKey(),
+      }),
   });
 };
 
@@ -66,7 +66,7 @@ export const useFetchExpenses = () => {
   return useQuery({
     queryKey: ["expenses"],
     queryFn: fetchExpenses,
-    enabled: true
+    enabled: true,
   });
 };
 
@@ -74,7 +74,7 @@ export const useFetchExpensesByCategoryId = (categoryId: string) => {
   return useQuery({
     queryKey: ["expenses", { categoryId }],
     queryFn: () => fetchExpenseById(categoryId),
-    enabled: !!categoryId
+    enabled: !!categoryId,
   });
 };
 
@@ -82,11 +82,11 @@ export const useCreateExpense = () => {
   const queryClient = useQueryClient();
 
   return useMutation<CommonResponse["data"], Error, CreateExpensePayload>({
-    mutationFn: payload => createExpense(payload),
+    mutationFn: (payload) => createExpense(payload),
     onSettled: () =>
       queryClient.invalidateQueries({
-        queryKey: getExpensesKey()
-      })
+        queryKey: getExpensesKey(),
+      }),
   });
 };
 
@@ -94,11 +94,11 @@ export const useUpdateExpense = () => {
   const queryClient = useQueryClient();
 
   return useMutation<CommonResponse["data"], Error, UpdateExpensePayload>({
-    mutationFn: payload => updateExpense(payload),
+    mutationFn: (payload) => updateExpense(payload),
     onSettled: () =>
       queryClient.invalidateQueries({
-        queryKey: getExpensesKey()
-      })
+        queryKey: getExpensesKey(),
+      }),
   });
 };
 
@@ -106,11 +106,11 @@ export const useDeleteCategory = () => {
   const queryClient = useQueryClient();
 
   return useMutation<void, Error, DeleteCategoryPayload>({
-    mutationFn: payload => deleteCategory(payload),
+    mutationFn: (payload) => deleteCategory(payload),
     onSettled: () =>
       queryClient.invalidateQueries({
-        queryKey: getCategoriesKey()
-      })
+        queryKey: getCategoriesKey(),
+      }),
   });
 };
 
@@ -118,10 +118,10 @@ export const useDeleteExpense = () => {
   const queryClient = useQueryClient();
 
   return useMutation<void, Error, DeleteExpensePayload>({
-    mutationFn: payload => deleteExpense(payload),
+    mutationFn: (payload) => deleteExpense(payload),
     onSettled: () =>
       queryClient.invalidateQueries({
-        queryKey: getExpensesKey()
-      })
+        queryKey: getExpensesKey(),
+      }),
   });
 };

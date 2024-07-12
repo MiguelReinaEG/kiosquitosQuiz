@@ -1,13 +1,12 @@
 import { useQueryClient } from "@tanstack/react-query";
 import React from "react";
-import { ScrollView, ListRenderItem, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native";
+import { ScrollView, Text, View } from "react-native";
+import { Link } from "expo-router";
 
 import styles from "./CategoryResume.styles";
 import { CategoryResumeProps as Props } from "./CategoryResume.types";
 import CategoryPlaceholder from "../CategoryPlaceholder/CategoryPlaceholder";
 import EmptyState from "@/components/global/EmptyState/EmptyState";
-import { Category } from "@/interfaces/categories.types";
 import { getCategoriesKey } from "@/services/finance.services.hooks";
 import { useFetchCategories } from "@/services/finance.services.hooks";
 
@@ -19,8 +18,6 @@ const CategoryResume: React.FC<Props> = (props) => {
     queryClient.refetchQueries({ queryKey: getCategoriesKey() });
   };
 
-  const onPress = (categoryId: number) => {};
-
   return (
     <ScrollView style={styles.scrollStyle} showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
@@ -30,20 +27,18 @@ const CategoryResume: React.FC<Props> = (props) => {
             const { emoji = "", name, id } = category;
 
             return (
-              <TouchableOpacity
-                key={index}
-                style={styles.categoryContainer}
-                onPress={() => onPress(id)}
-              >
+              <View key={index} style={styles.categoryContainer}>
                 <View style={styles.top}>
                   <Text style={styles.emoji}>{emoji}</Text>
                 </View>
                 <View style={styles.bottom}>
-                  <Text style={styles.title} numberOfLines={1}>
-                    {name}
-                  </Text>
+                  <Link href={`/category/${id}`}>
+                    <Text style={styles.title} numberOfLines={1}>
+                      {name}
+                    </Text>
+                  </Link>
                 </View>
-              </TouchableOpacity>
+              </View>
             );
           })
         ) : (

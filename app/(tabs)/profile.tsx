@@ -2,7 +2,7 @@ import { Link } from "expo-router";
 import { useState } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-import { supabase } from "../supabase";
+import { supabase } from "../../config/supabase";
 
 import AnonymousMessage from "@/components/AnonymousMessage";
 import { Text, View } from "@/components/Themed";

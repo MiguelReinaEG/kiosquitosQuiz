@@ -7,9 +7,9 @@ import { DeleteExpensePayload } from "./finance.services.types";
 import { UpdateCategoryPayload } from "./finance.services.types";
 import { UpdateExpensePayload } from "./finance.services.types";
 
-import { supabase } from "@/app/supabase";
 import { Category } from "@/interfaces/categories.types";
 import { Expenses } from "@/interfaces/expenses.types";
+import { supabase } from "@/config/supabase";
 
 export const fetchCategories = async () => {
   const response: PostgrestSingleResponse<Category[]> = await supabase
@@ -29,7 +29,7 @@ export const fetchCategoryById = async (id: Category["id"]) => {
 
   if (response.error) throw Error(response.error.message);
   if (!response.data) throw new Error(`No category ${id} found`);
-  return response.data;
+  return response.data[0];
 };
 
 export const fetchExpenses = async () => {
@@ -71,7 +71,7 @@ export const createCategory = async (payload: CreateCategoryPayload) => {
 };
 
 export const updateCategory = async (payload: UpdateCategoryPayload) => {
-  const { name, limit, id } = payload;
+  const { name, amount, id } = payload;
 
   const { data } = await supabase.auth.getSession();
   const { id: userId } = data.session?.user ?? {};
@@ -79,9 +79,9 @@ export const updateCategory = async (payload: UpdateCategoryPayload) => {
 
   const partialCategory = {
     name,
-    limit,
+    amount,
     user_id: userId,
-    updated_at: new Date()
+    updated_at: new Date(),
   };
 
   const response: PostgrestSingleResponse<Category> = await supabase
