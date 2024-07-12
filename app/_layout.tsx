@@ -1,10 +1,9 @@
 import { useFonts } from "expo-font";
-import { Stack, Tabs } from "expo-router";
+import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
 import Providers from "@/Providers/Providers";
-import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
 export {
   // Catch any errors thrown by the Layout component.

@@ -1,10 +1,10 @@
 import * as Linking from "expo-linking";
 import { router, useNavigation } from "expo-router";
 import * as WebBrowser from "expo-web-browser";
-import React, { useEffect, useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import React, { useEffect } from "react";
+import { View, Text } from "react-native";
 
-import { createSessionFromUrl, performOAuth } from "./login.helpers";
+import { createSessionFromUrl } from "./login.helpers";
 import { styles } from "./login.screen.styles";
 
 import EmailForm from "@/components/EmailForm";
