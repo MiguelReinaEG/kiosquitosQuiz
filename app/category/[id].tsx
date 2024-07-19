@@ -8,7 +8,7 @@ const CategoryScreen = () => {
   const { setOptions } = useNavigation();
   const local = useLocalSearchParams<{ id: string }>();
   const { id: categoryId } = local;
-  const { data: category } = useFetchCategory(categoryId);
+  const { data: category } = useFetchCategory(+categoryId);
   const { name } = category ?? {};
 
   useEffect(() => {

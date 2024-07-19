@@ -3,26 +3,26 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: palette.title,
-    marginBottom: 4,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingVertical: 16,
-    paddingHorizontal: 16,
-    borderColor: "lightgrey",
+    flexDirection: "column",
+    flex: 1,
+  },
+  emoji: {
+    fontSize: 80,
   },
   title: {
     color: "black",
   },
-  leftContainer: {
+  topContainer: {
+    paddingVertical: 16,
+    paddingHorizontal: 16,
+    marginBottom: 4,
+    backgroundColor: palette.title,
     flexDirection: "column",
-    alignItems: "flex-start",
-  },
-  rightContainer: {
-    flexDirection: "row",
     alignItems: "center",
-    gap: 8,
+  },
+  bottomContainer: {
+    flex: 1,
+    padding: 8,
   },
 });
 

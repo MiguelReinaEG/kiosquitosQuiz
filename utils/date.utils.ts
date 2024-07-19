@@ -5,3 +5,8 @@ export const formatDate = (date: string | undefined) => {
   if (!date) return "";
   return dayjs(date).format("DD/MM/YYYY");
 };
+
+export const getCreatedAt = (date: string | undefined) => {
+  if (!date) return "";
+  return `Created: ${formatDate(date)}`;
+};
