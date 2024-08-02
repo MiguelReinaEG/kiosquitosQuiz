@@ -13,7 +13,6 @@
     "check-types": "tsc",
     "lint:staged": "eslint --ignore-path .gitignore --ext .js,.jsx,.ts,.tsx .",
     "lint": "yarn lint:staged .",
-    "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|css|scss|html)\"",
     "format": "yarn prettier --write",
     "check-format": "yarn prettier --list-different",
     "prepare": "husky install",
