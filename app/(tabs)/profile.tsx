@@ -1,12 +1,13 @@
 import { Link } from "expo-router";
 import { useState } from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, TouchableOpacity, Image, FlatList } from "react-native";
 
 import { supabase } from "../../config/supabase";
 
 import AnonymousMessage from "@/components/AnonymousMessage";
 import { Text, View } from "@/components/Themed";
 import { useAuthStore } from "@/stores/auth/auth.store";
+import Ranking from "@/components/Ranking/Ranking";
 
 export default function ProfileScreen() {
   const [loading, setLoading] = useState(false);
@@ -63,24 +64,48 @@ export default function ProfileScreen() {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.headerTitle}>Profile</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
       {!isAnonymous ? (
-        <>
-          <Text>Hello{`, ${uppercaseName}!`}</Text>
-          <Text style={styles.name}>{email}</Text>
-        </>
+        <View style={{ flexDirection: "row" }}>
+          <Image
+            source={require("../../assets/images/kfc_kq_logo.png")}
+            style={styles.imageProfile}
+          />
+
+          <View
+            style={{
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              top: 20,
+              marginLeft: 20,
+              marginBottom: 50,
+            }}
+          >
+            <Text style={{ fontFamily: "PoppinsBold", fontSize: 24 }}>
+              Hello{`, ${uppercaseName}!`}
+            </Text>
+            <Text style={styles.name}>{email}</Text>
+            <Text style={styles.name}>Ten encuentras en el top 3.</Text>
+          </View>
+        </View>
       ) : null}
+
       {renderLogoutUserComponent()}
+
       <View
         style={styles.separator}
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
       {renderTermsAndConditions()}
+      <Ranking />
+      <Text>Holi</Text>
     </View>
   );
 }
@@ -92,19 +117,13 @@ export const styles = StyleSheet.create({
     paddingTop: 64,
     alignItems: "center",
   },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginTop: 20,
-    marginLeft: 20,
-  },
   image: {
     borderWidth: 4,
     borderColor: "#111827",
   },
   name: {
-    marginBottom: 80,
     color: "#333",
+    fontFamily: "Poppins",
   },
   content: {
     flex: 1,
@@ -123,5 +142,16 @@ export const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: "80%",
+  },
+  headerTitle: {
+    fontSize: 24,
+    fontFamily: "PoppinsBold",
+    marginTop: 20,
+    marginLeft: 20,
+  },
+  imageProfile: {
+    width: 100,
+    height: 100,
+    borderRadius: 100,
   },
 });
