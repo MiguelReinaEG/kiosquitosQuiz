@@ -4,6 +4,7 @@ import React from "react";
 
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import TabBar from "@/components/TabBar/TabBar";
+import { useAuthStore } from "@/stores/auth/auth.store";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -14,9 +15,11 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
+  const isAnonymous = useAuthStore((state) => state.isAnonymous);
+
   return (
     <Tabs
-      tabBar={(props) => <TabBar {...props} />}
+      tabBar={(props) => (isAnonymous ? <></> : <TabBar {...props} />)}
       screenOptions={{
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
