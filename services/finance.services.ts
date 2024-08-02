@@ -40,10 +40,10 @@ export const fetchQuizzesByCategoryId = async (id: Category["id"]) => {
 export const fetchQuizDetail = async (id: Quiz["id"]) => {
   const response: PostgrestSingleResponse<Quiz> = await supabase
     .from("quiz")
-    .select("*, question(*)")
+    .select("*, question(*,option(*))")
     .eq("id", id)
     .single();
-
+  // console.log(JSON.stringify(response));
   if (response.error) throw Error(response.error.message);
   if (!response.data) throw new Error(`No quizzes fround for category ${id}`);
   return response.data;
