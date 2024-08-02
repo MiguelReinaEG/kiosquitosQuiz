@@ -14,13 +14,12 @@ const QuizDetail: React.FC<Props> = (props) => {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        {question?.map((item, idx) => {
+        {question?.map((item, index) => {
           const { question, option } = item;
 
-          console.log(option);
           return (
-            <>
-              <View key={idx} style={styles.content}>
+            <View key={index}>
+              <View style={styles.content}>
                 <Text style={styles.text}>{item.question}</Text>
               </View>
               <View>
@@ -37,7 +36,7 @@ const QuizDetail: React.FC<Props> = (props) => {
                 })}
                 <Text>--------------------</Text>
               </View>
-            </>
+            </View>
           );
         })}
       </ScrollView>
