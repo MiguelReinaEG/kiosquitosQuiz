@@ -10,7 +10,6 @@ const QuizDetail: React.FC<Props> = (props) => {
   const { quizId } = props;
   const { data: quiz } = useFetchQuizDetail(+quizId);
   const { question } = quiz ?? {};
-  const [selected, setSelected] = React.useState(null);
 
   return (
     <View style={styles.container}>
@@ -20,8 +19,8 @@ const QuizDetail: React.FC<Props> = (props) => {
 
           console.log(option);
           return (
-            <View key={idx}>
-              <Text>{item.question}</Text>
+            <View key={idx} style={styles.content}>
+              <Text style={styles.text}>{item.question}</Text>
               <View>
                 {option.map((opt, idx) => {
                   return (
