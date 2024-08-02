@@ -10,7 +10,6 @@ const QuizScreen = () => {
   const { id: quizId } = local;
   const { data: quiz } = useFetchQuizDetail(+quizId);
   const { title } = quiz ?? {};
-  console.log({ quiz });
 
   useEffect(() => {
     setOptions({
