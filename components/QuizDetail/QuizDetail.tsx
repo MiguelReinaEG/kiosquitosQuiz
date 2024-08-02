@@ -19,8 +19,10 @@ const QuizDetail: React.FC<Props> = (props) => {
 
           console.log(option);
           return (
-            <View key={idx} style={styles.content}>
-              <Text style={styles.text}>{item.question}</Text>
+            <>
+              <View key={idx} style={styles.content}>
+                <Text style={styles.text}>{item.question}</Text>
+              </View>
               <View>
                 {option.map((opt, idx) => {
                   return (
@@ -35,7 +37,7 @@ const QuizDetail: React.FC<Props> = (props) => {
                 })}
                 <Text>--------------------</Text>
               </View>
-            </View>
+            </>
           );
         })}
       </ScrollView>
