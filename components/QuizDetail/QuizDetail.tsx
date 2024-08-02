@@ -15,8 +15,8 @@ const QuizDetail: React.FC<Props> = (props) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         {question?.map((item, idx) => {
           return (
-            <View key={idx}>
-              <Text>{item.question}</Text>
+            <View key={idx} style={styles.content}>
+              <Text style={styles.text}>{item.question}</Text>
             </View>
           );
         })}
