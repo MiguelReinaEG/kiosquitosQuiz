@@ -17,7 +17,7 @@ const QuizScreen = () => {
     });
   }, [setOptions, title]);
 
-  return <QuizDetail />;
+  return <QuizDetail quizId={+quizId} />;
 };
 
 export default QuizScreen;

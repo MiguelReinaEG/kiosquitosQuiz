@@ -40,7 +40,7 @@ export const fetchQuizzesByCategoryId = async (id: Category["id"]) => {
 export const fetchQuizDetail = async (id: Quiz["id"]) => {
   const response: PostgrestSingleResponse<Quiz> = await supabase
     .from("quiz")
-    .select("*")
+    .select("*, question(*)")
     .eq("id", id)
     .single();
 
