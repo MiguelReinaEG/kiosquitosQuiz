@@ -46,5 +46,6 @@ export const useFetchQuizDetail = (quizId?: Quiz["id"]) => {
     queryKey: ["quiz-detail", { quizId }],
     queryFn: () => fetchQuizDetail(quizId!),
     enabled: typeof quizId !== "undefined",
+    staleTime: 0,
   });
 };
