@@ -37,9 +37,15 @@ const QuizList: React.FC<Props> = (props) => {
 
     if (status === "pending") {
       return (
-        <View>
-          <Text>PLACEHOLDER</Text>
-        </View>
+        <>
+          <View style={styles.placeholder} />
+          <View style={styles.placeholder} />
+          <View style={styles.placeholder} />
+          <View style={styles.placeholder} />
+          <View style={styles.placeholder} />
+          <View style={styles.placeholder} />
+          <View style={styles.placeholder} />
+        </>
       );
     }
     return null;
